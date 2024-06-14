@@ -16,9 +16,9 @@ public class InsertSQL {
         // Declaração preparada \\
 
             // Defina os valores para cada parâmetro
-            valores.setString(1, "tommy");
+            valores.setString(1, "Lacoste");
             valores.setString(2, "M");
-            valores.setInt(3, 25);
+            valores.setInt(3, 40);
 
             //executeUpdate() Executa a instrução SQL de inserção e  
             //retorna o número de linhas afetadas.
