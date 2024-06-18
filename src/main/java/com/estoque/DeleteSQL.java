@@ -14,10 +14,10 @@ public class DeleteSQL {
         
         try (Connection conexcao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/produtos",
         "postgres", "senha123");
-             PreparedStatement valores = conexcao.prepareStatement(delete)) {
+             PreparedStatement pstm = conexcao.prepareStatement(delete)) {
                     
-             valores.setInt(1, id); // 1 e a coluna na table
-             int linhasAfetadas = valores.executeUpdate();
+                pstm.setInt(1, id); 
+                int linhasAfetadas = pstm.executeUpdate();
 
              if (linhasAfetadas > 0) {
                 System.out.println("Um registro foi deletado com sucesso!");
