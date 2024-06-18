@@ -19,17 +19,21 @@ public class App {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        InsertSQL insertInCamisetas = new InsertSQL();
-        insertInCamisetas.insert_sql();
-        insertInCamisetas.insert_sql();
-        insertInCamisetas.insert_sql();
+        
+         InsertSQL insertInCamisetas = new InsertSQL();
+         insertInCamisetas.insert_sql();
 
          DeleteSQL deleteId = new DeleteSQL();
-         deleteId.delete_sql(55); 
+         deleteId.delete_sql(61); 
+        
+         UpdateSQL modificarCamisetas = new UpdateSQL();
+         modificarCamisetas.modificar("Onbongo", 58);
 
-         
-         /* 
+     }
+}
+
+
+/* 
           Como deletar varios: 
 
           funciona pq os valores a deletar são int
@@ -40,6 +44,3 @@ public class App {
              deleteId.delete_sql(i);
              }
          */
-
-     }
-}
