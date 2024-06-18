@@ -12,19 +12,13 @@ public class InsertSQL {
 
         try (Connection conexcao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/produtos",
         "postgres", "senha123");
-             PreparedStatement valores = conexcao.prepareStatement(inserirSQL)) {
-        // Declaração preparada \\
+             PreparedStatement pstm = conexcao.prepareStatement(inserirSQL)) {
 
-            // Defina os valores para cada parâmetro
-            valores.setString(1, "Lacoste");
-            valores.setString(2, "M");
-            valores.setInt(3, 40);
+            pstm.setString(1, "Adidas");
+            pstm.setString(2, "P");
+            pstm.setInt(3, 47);
+            int linhasAfetadas = pstm.executeUpdate();
 
-            //executeUpdate() Executa a instrução SQL de inserção e  
-            //retorna o número de linhas afetadas.
-            int linhasAfetadas = valores.executeUpdate();
-
-            // Verifique se a inserção foi bem-sucedida
             if (linhasAfetadas > 0) {
                 System.out.println("Dados inseridos com sucesso.");
             }
